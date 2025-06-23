@@ -1,0 +1,270 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+ 
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 20px;
+  color: #1326af;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 12px;
+  color: #06b0e3;
+}
+
+nav a {
+  margin: 0 15px;
+  color: rgb(255, 255, 255);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: rgba(0, 0, 0, 0.911);
+}
+.button{
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(41, 180, 223);
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+.btn {
+  background-color: red;
+  border: none;
+  color: rgb(255, 108, 177);
+  border-radius: 15px;
+  padding: 10px 20px; 
+  text-align: center;
+  opacity: 1;
+  transition: 0.3s;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {opacity: 0.4}
+
+.texy{ text-align: center;
+       text-overflow: ellipsis;
+       margin-top: 40px;
+
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #c3e0f6, #ce6cd4);
+  padding: 30px 30px;
+}
+
+.hero-left {
+  width: 400px;
+  height: 200px;
+  margin-top: 60px;
+  margin-left: 90px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+ 
+.call-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+ 
+.card-grid {
+    background: linear-gradient(to right, #0cc2b9, #f3dd12);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 20px;
+    gap: 20px;
+    
+}
+.card {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+ footer {
+   background: linear-gradient(to right, #f12020, #21f8ff);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 20px;
+    flex-wrap: wrap;
+}
+
+.footer-col h4 {
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 5px;
+}
+
+.card {
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  background-color: white;
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Text animation inside card */
+.card h3, .card p {
+  transition: color 0.3s ease;
+}
+
+.card:hover h3, .card:hover p {
+  color: #1326af;
+}
+ 
+ 
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+ 
+
+.card:hover {
+  transform: scale(1.05) rotateZ(1deg);
+}
+
+
+ .card {
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: #271ad8;
+}
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 5px 0;
+    color: white;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 90%;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 10px;
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .call-btn {
+    margin: 10px auto;
+  }
+
+  .whatsapp-box {
+    right: 10px;
+    bottom: 10px;
+    padding: 8px 12px;
+  }
+
+  .whatsapp-box span {
+    font-size: 14px;
+  }
+}

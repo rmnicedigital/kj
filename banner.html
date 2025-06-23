@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RM Nice Digital</title>
+  <link rel="icon" href="C:\Users\Server\Documents\RM Nice Web\Pic\head.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #d64df5, #ffa45b);
+      padding: 20px;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    header h2 {
+      font-size: 24px;
+    }
+
+    header h2 span {
+      color: #002B5B;
+      font-weight: bold;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      color: black;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .product-image {
+      flex: 1 1 300px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-details {
+      flex: 1 1 300px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-details input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .price {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .qty-box {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+
+    .qty-box button {
+      background: #eee;
+      border: none;
+      padding: 8px 12px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .qty-box input[type="text"] {
+      width: 40px;
+      text-align: center;
+      border: none;
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    .size-box {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .size-box input {
+      width: 60px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .buy-btn {
+      margin-top: 20px;
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      align-self: start;
+    }
+
+    .buy-btn:hover {
+      background-color: #1ebe57;
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        flex-direction: column;
+      }
+
+      .product-image, .product-details {
+        flex: 1 1 100%;
+      }
+
+      .product-details {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="C:\Users\Server\Documents\RM Nice Web\Pic\head.png" alt="Logo" class="logo" />
+    <h2><span>RM Nice</span> digital</h2>
+  </header>
+
+  <div class="product-card">
+    <div class="product-image">
+      <img src="C:\Users\Server\Documents\RM Nice Web\Pic\Product\flexmachine.jpg" alt="Banner" />
+    </div>
+    <div class="product-details">
+      <style>
+         .product {
+      flex: 1 1 300px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .price {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .price .new {
+      color: red;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .price .old {
+      text-decoration: line-through;
+      color: gray;
+      font-size: 18px;
+    }
+      </style>
+
+        <div class="product">
+            <h2>Banner ( flex )</h2>
+            <p>company : RM Nice Digital</p>
+            <div class="price">
+              <span class="new">₹300</span>
+              <span class="old">₹500</span>
+            </div>
+      <label for="qty">Quantity:</label>
+      <div class="qty-box">
+        <button onclick="changeQty(-1)">-</button>
+        <input type="text" id="qty" value="1" readonly />
+        <button onclick="changeQty(1)">+</button>
+      </div>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+
+      <label for="size">Size:</label>
+      <div class="size-box">
+        <input type="number" id="width" value="10" /> ×
+        <input type="number" id="height" value="8" />
+      </div>
+
+      <button class="buy-btn" onclick="sendWhatsApp()">Buy</button>
+    </div>
+  </div>
+
+  <script>
+    function changeQty(delta) {
+      const input = document.getElementById("qty");
+      let value = parseInt(input.value) || 1;
+      value += delta;
+      if (value < 1) value = 1;
+      input.value = value;
+    }
+  
+    function sendWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const product = document.querySelector(".product h2").textContent.trim();
+  const rate = document.querySelector(".price .new").textContent.trim();
+  const qty = document.getElementById("qty").value.trim();
+  const width = document.getElementById("width").value.trim();
+  const height = document.getElementById("height").value.trim();
+
+  if (!name || !product || !rate || !qty || !width || !height) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  const message = `Order Details:\n\nName: ${name}\nProduct: ${product}\nRate: ${rate}\nQuantity: ${qty}\nSize: ${width} × ${height}`;
+  const phone = "9444248188";
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
+    
+  </script>
+</body>
+</html>
